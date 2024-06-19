@@ -1,2 +1,2 @@
 # bricksum
-A lrem ipsum application for BrickMMO. 
+A lorem ipsum application for BrickMMO. 
