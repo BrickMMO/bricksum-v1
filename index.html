@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bricksum</title>
-  </head>
-  <body>
-    <h1>Bricksum</h1>
-    <h2>
-      This is the new location for
-      <a href="https://bricksum.brickmmo.com">https://bricksum.brickmmo.com</a>
-    </h2>
-    <h2>
-      See
-      <a href="https://github.com/BrickMMO/bricksum-v1"
-        >https://github.com/BrickMMO/bricksum-v1</a
-      >
-      for more information
-    </h2>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js"></script>
+    <title>BrickSum</title>
+</head>
+<body>
+    <header id="header">
+        <div id="icon">
+            <img src="./images/Bricksum_Icon.png" alt="Bricksum-icon">
+        </div>
+        <h1>BrickSum</h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <form name="myform">
+            <div class="row">
+                <label for="usertxt">Input Words:</label>
+                <input type="text" id="usertxt" name="usertxt" />
+            </div> 
+            <div class="row">
+                <label for="numpara">Number of paragraphs:</label>
+                <input type="number" id="numpara" name="numpara" min="1" max="20" value="1" />
+            </div>
+            <div class="row">
+                <label for="numwords">Number of words per paragraph:</label>
+                <input type="number" id="numwords" name="numwords" min="1" max="100" value="10" />
+            </div>
+            <div class="btn">
+                <button type="submit" id="generate-btn">Generate Text <i class="fa fa-plus"></i></button>
+                <button type="button" id="copy-btn">Copy <i class="fa fa-regular fa-copy"></i></button>
+            </div>
+        </form>
+        <div id="output">Welcome!!</div>
+    </main>
+    <footer id="footer">
+        <div class="copyright">
+            <p>&copy; BrickMMO. 2024. All rights reserved</p>
+            <p>LEGO, the LEGO logo and the Minifigure are trademarks of the LEGO Group.</p>
+        </div>
+    </footer>
+</body>
 </html>
