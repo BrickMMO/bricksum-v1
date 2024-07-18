@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/script.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
     <title>BrickSum</title>
 </head>
 <body>
@@ -16,27 +15,28 @@
             <img src="./images/Bricksum_Icon.png" alt="Bricksum-icon">
         </div>
         <h1>BrickSum</h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
     </header>
     <main id="main">
+        <p>BrickSum is a unique tool designed for LEGO enthusiasts, content creators, and developers. This tool allows you to create different texts from the chosen option with the given size in the <strong>Number</strong> input.</p>
+
+        <h3>Features</h3>
+        <ol>
+            <li>Generate custom Lorem Ipsum text using LEGO-themed words</li>
+            <li>Specify the number of Words, Sentences, or Paragraphs</li>
+            <li>Easily copy the generated text to your clipboard</li>
+        </ol>
+
         <form name="myform">
-            <div class="row">
-                <label for="usertxt">Input Words:</label>
-                <input type="text" id="usertxt" name="usertxt" />
-            </div> 
-            <div class="row">
-                <label for="numpara">Number of paragraphs:</label>
-                <input type="number" id="numpara" name="numpara" min="1" max="20" value="1" />
-            </div>
-            <div class="row">
-                <label for="numwords">Number of words per paragraph:</label>
-                <input type="number" id="numwords" name="numwords" min="1" max="100" value="10" />
-            </div>
+            <span>
+                <label for="num">Number:</label>
+                <br>
+                <input type="number" id="num" name="form_num" min="1" value="5" />
+            </span>
+            <select name="form_option" id="dropdown">
+                <option value="words">Words</option>
+                <option value="sentences">Sentences</option>
+                <option value="paragraphs">Paragraphs</option>
+            </select>
             <div class="btn">
                 <button type="submit" id="generate-btn">Generate Text <i class="fa fa-plus"></i></button>
                 <button type="button" id="copy-btn">Copy <i class="fa fa-regular fa-copy"></i></button>

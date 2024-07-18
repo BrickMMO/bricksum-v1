@@ -1,49 +1,45 @@
 window.onload = function() {
-    var formHandle = document.forms.myform;
+
+    let outputDiv = document.getElementById('output');
+    let copyBtn = document.getElementById('copy-btn');
+
+    let formHandle = document.forms.myform;
+    let slctOption = formHandle.form_option;
+
     formHandle.onsubmit = processForm;
 
-    var inputElement = document.getElementById('usertxt');
-    var outputDiv = document.getElementById('output');
-    var copyBtn = document.getElementById('copy-btn');
-
-    // Initialize Tagify on the input element
-    var tagify = new Tagify(inputElement);
-
     function processForm(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
 
-        var inputWords = tagify.value.map(item => item.value); // Get tags as an array of strings
-        var numPara = parseInt(formHandle.numpara.value, 10);
-        var numWords = parseInt(formHandle.numwords.value, 10);
+        let num_search = formHandle.form_num;
 
-        var loremIpsumText = generateLoremText(numPara, numWords, inputWords);
-        outputDiv.innerHTML = loremIpsumText;
+        brickMMOLorem(num_search)
+
     }
 
-    function generateLoremText(numPara, numWords, userWordsArray) {
-        var loremText = '';
-        var words = ["roof", "chimney", "window", "door", "frame", "gate", "ramp", "slide", "ladder", "rail",
-            "handle", "hinge", "bracket", "connector", "clip", "hook", "ring", "hub", "gear", "wheel",
-            "tire", "axle", "shaft", "pin", "bushing", "cam", "pulley", "chain", "belt", "gearbox",
-            "knob", "lever", "switch", "turntable", "socket", "antenna", "mast", "flag", "flap", "wing"
-        ];
-        words = words.concat(userWordsArray);
+    function brickMMOLorem(num_search){
 
-        for (var i = 0; i < numPara; i++) {
-            var paragraph = '';
-            for (var j = 0; j < numWords; j++) {
-                var randomWord = words[Math.floor(Math.random() * words.length)];
-                paragraph += randomWord + ' ';
+        let url = `http://local.console.brickmmo.com:7777/api/bricksum/generate/${slctOption.value}/${num_search.value}`; 
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                console.log("API response:", data);
+                let textOutput = '<p>'+ data.wordlist.replace(/\r/g, '</p><p>')+ '</p>';
+                outputDiv.innerHTML = textOutput;
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error when calling API:", textStatus, errorThrown);
             }
-            loremText += '<p>' + paragraph.trim() + '</p>';
-        }
-        return loremText;
+        });
     }
 
     copyBtn.onclick = function() {
-        var range = document.createRange();
+        let range = document.createRange();
         range.selectNodeContents(outputDiv);
-        var selection = window.getSelection();
+        let selection = window.getSelection();
         selection.removeAllRanges();
         selection.addRange(range);
 
