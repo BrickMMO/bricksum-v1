@@ -19,7 +19,7 @@ window.onload = function() {
 
     function brickMMOLorem(num_search){
 
-        let url = `http://local.console.brickmmo.com:7777/api/bricksum/generate/${slctOption.value}/${num_search.value}`; 
+        let url = `https://console.brickmmo.com/api/bricksum/generate/${slctOption.value}/${num_search.value}`; 
 
         $.ajax({
             url: url,
