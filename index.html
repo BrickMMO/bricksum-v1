@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/script.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <title>BrickSum</title>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <div id="icon">
-            <img src="./images/Bricksum_Icon.png" alt="Bricksum-icon">
-        </div>
-        <h1>BrickSum</h1>
+      <div id="icon">
+        <img src="./images/Bricksum_Icon.png" alt="Bricksum-icon" />
+      </div>
+      <h1>BrickSum</h1>
     </header>
     <main id="main">
-        <p>BrickSum is a unique tool designed for LEGO enthusiasts, content creators, and developers. This tool allows you to create different texts from the chosen option with the given size in the <strong>Number</strong> input.</p>
+      <p>
+        BrickSum is a unique tool designed for LEGO enthusiasts, content
+        creators, and developers. This tool allows you to create different texts
+        from the chosen option with the given size in the
+        <strong>Number</strong> input.
+      </p>
 
-        <h3>Features</h3>
-        <ol>
-            <li>Generate custom Lorem Ipsum text using LEGO-themed words</li>
-            <li>Specify the number of Words, Sentences, or Paragraphs</li>
-            <li>Easily copy the generated text to your clipboard</li>
-        </ol>
+      <h3>Features</h3>
+      <ol>
+        <li>Generate custom Lorem Ipsum text using LEGO-themed words</li>
+        <li>Specify the number of Words, Sentences, or Paragraphs</li>
+        <li>Easily copy the generated text to your clipboard</li>
+      </ol>
 
-        <form name="myform">
-            <span>
-                <label for="num">Number:</label>
-                <br>
-                <input type="number" id="num" name="form_num" min="1" value="5" />
-            </span>
-            <select name="form_option" id="dropdown">
-                <option value="words">Words</option>
-                <option value="sentences">Sentences</option>
-                <option value="paragraphs">Paragraphs</option>
-            </select>
-            <div class="btn">
-                <button type="submit" id="generate-btn">Generate Text <i class="fa fa-plus"></i></button>
-                <button type="button" id="copy-btn">Copy <i class="fa fa-regular fa-copy"></i></button>
-            </div>
-        </form>
-        <div id="output">Welcome!!</div>
+      <form name="myform">
+        <span>
+          <label for="num">Number:</label>
+          <br />
+          <input type="number" id="num" name="form_num" min="1" value="5" />
+        </span>
+        <select name="form_option" id="dropdown">
+          <option value="words">Words</option>
+          <option value="sentences">Sentences</option>
+          <option value="paragraphs">Paragraphs</option>
+        </select>
+        <div class="btn">
+          <button type="submit" id="generate-btn">
+            Generate Text <i class="fa fa-plus"></i>
+          </button>
+          <button type="button" id="copy-btn">
+            Copy <i class="fa fa-regular fa-copy"></i>
+          </button>
+        </div>
+      </form>
+      <div id="output">Welcome!!</div>
     </main>
     <footer id="footer">
-        <div class="copyright">
-            <p>&copy; BrickMMO. 2024. All rights reserved</p>
-            <p>LEGO, the LEGO logo and the Minifigure are trademarks of the LEGO Group.</p>
-        </div>
+      <div class="copyright">
+        <p>&copy; BrickMMO. 2024. All rights reserved</p>
+        <p>
+          LEGO, the LEGO logo and the Minifigure are trademarks of the LEGO
+          Group.
+        </p>
+      </div>
     </footer>
-</body>
+
+    <script src="http://local.account.brickmmo.com:7777/header"></script>
+    <_script src="header.js"></_script>
+  </body>
 </html>
