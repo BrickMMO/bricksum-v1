@@ -43,9 +43,9 @@ window.onload = function () {
 
     try {
       document.execCommand("copy");
-      alert("Text copied to clipboard");
+      // alert("Text copied to clipboard");
     } catch (err) {
-      alert("Failed to copy text");
+      // alert("Failed to copy text");
     }
 
     selection.removeAllRanges();

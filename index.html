@@ -19,6 +19,7 @@
       </div>
       <h1>BrickSum</h1>
     </header>
+
     <main id="main">
       <p>
         BrickSum is a unique tool designed for LEGO enthusiasts, content
@@ -36,14 +37,12 @@
 
       <form name="myform">
         <span>
-          <label for="num">Number:</label>
-          <br />
           <input type="number" id="num" name="form_num" min="1" value="5" />
         </span>
         <select name="form_option" id="dropdown">
           <option value="words">Words</option>
           <option value="sentences">Sentences</option>
-          <option value="paragraphs">Paragraphs</option>
+          <option value="paragraphs" selected>Paragraphs</option>
         </select>
         <div class="btn">
           <button type="submit" id="generate-btn">
@@ -54,7 +53,7 @@
           </button>
         </div>
       </form>
-      <div id="output">Welcome!!</div>
+      <div id="output"></div>
     </main>
     <footer id="footer">
       <div class="copyright">
