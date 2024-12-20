@@ -2,6 +2,8 @@
 
 This is website for the [Bricksum](https://bricksum.brickmmo.com/) word generator. 
 
+This tool is similar to the [Lorem Ipsum](https://lipsum.com/) tool except uses words from a list of predefined LEGO related words. 
+
 > This repo is available to view at  
 > [https://bricksum.brickmmo.com](https://bricksum.brickmmo.com)
 
