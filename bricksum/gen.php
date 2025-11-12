@@ -16,14 +16,9 @@ include('../templates/message.php');
 ?>
 
 
-    <header id="header">
-      <div id="icon">
-        <img src="https://cdn.brickmmo.com/icons@1.0.0/bricksum.png" alt="Bricksum-icon" />
-      </div>
-      <h1>BrickSum</h1>
-    </header>
 
-    <main id="main">
+    <h1>Bricksum</h1>
+
       <p>
         BrickSum is a unique tool designed for BrickMMO enthusiasts, content
         creators, and developers. This tool allows you to create different texts
@@ -31,7 +26,7 @@ include('../templates/message.php');
         <strong>Number</strong> input.
       </p>
 
-      <h3>Features</h3>
+      <h2>Features</h2>
       <ol>
         <li>Generate custom Lorem Ipsum text using BrickMMO thememed words</li>
         <li>Specify the number of words, sentences, or paragraphs</li>
@@ -57,17 +52,68 @@ include('../templates/message.php');
         </div>
       </form>
       <div id="output"></div>
-    </main>
-    <footer id="footer" class="w3-border-top w3-margin-top w3-center">
-        <div class="copyright">
-            <p>&copy; <a href="https://brickmmo.com">BrickMMO</a> | 2024 | All rights reserved</p>
-            <p>
-            LEGO, the LEGO logo and the Minifigure are trademarks of the LEGO
-            Group.
-            </p>
-        </div>
-    </footer>
-  
+    
+    
+
+<script>
+
+
+
+window.onload = function () {
+  let outputDiv = document.getElementById("output");
+  let copyBtn = document.getElementById("copy-btn");
+
+  let formHandle = document.forms.myform;
+  let slctOption = formHandle.form_option;
+
+  formHandle.onsubmit = processForm;
+
+  function processForm(event) {
+    event.preventDefault();
+
+    let num_search = formHandle.form_num;
+
+    brickMMOLorem(num_search);
+  }
+
+  function brickMMOLorem(num_search) {
+    let url = `http://local.bricksum.brickmmo.com:7777/api/generate/${slctOption.value}/${num_search.value}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("API response:", data);
+        let textOutput =
+          "<p>" + data.wordlist.replace(/\r/g, "</p><p>") + "</p>";
+        outputDiv.innerHTML = textOutput;
+      })
+      .catch((error) => {
+        console.error("Error when calling API:", error);
+      });
+  }
+
+  copyBtn.onclick = function () {
+    let range = document.createRange();
+    range.selectNodeContents(outputDiv);
+    let selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    try {
+      document.execCommand("copy");
+      // alert("Text copied to clipboard");
+    } catch (err) {
+      // alert("Failed to copy text");
+    }
+
+    selection.removeAllRanges();
+  };
+};
+
+
+
+</script>
+
 <?php
 
 include('../templates/main_footer.php');
