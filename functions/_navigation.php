@@ -5,30 +5,30 @@ function navigation_array($selected = false)
 
     $navigation = [
         [
-            'title' => 'Events',
+            'title' => 'Bricksum',
             'sections' => [
                 [
-                    'title' => 'Events',
+                    'title' => 'Bricksum',
                     'id' => 'admin-content',
                     'pages' => [
                         [
-                            'icon' => 'events',
+                            'icon' => 'bricksum',
                             'url' => '/admin/dashboard',
-                            'title' => 'Events',
+                            'title' => 'Bricksum',
                             'sub-pages' => [
                                 [
                                     'title' => 'Dashboard',
                                     'url' => '/admin/dashboard',
                                     'colour' => 'red',
                                 ],[
-                                    'title' => 'Add Event',
-                                    'url' => '/admin/add',
+                                    'title' => 'Word List',
+                                    'url' => '/admin/words',
                                     'colour' => 'red',
                                 ],[
                                     'br' => '---',
                                 ],[
-                                    'title' => 'Visit Events App',
-                                    'url' => 'https://events.brickmmo.com',
+                                    'title' => 'Visit Bricksum App',
+                                    'url' => 'https://bricksum.brickmmo.com',
                                     'colour' => 'orange',
                                     'icon' => 'fa-solid fa-arrow-up-right-from-square',
                                 ],[
