@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="./js/script.js"></script>
-    <script src="./js/jquery-3.7.1.min.js"></script>
-    <title>BrickSum</title>
-  </head>
-  <body>
+<?php
+
+define('APP_NAME', 'QR Codes');
+define('PAGE_TITLE', 'Dashboard');
+define('PAGE_SELECTED_SECTION', '');
+define('PAGE_SELECTED_SUB_PAGE', '');
+
+include('../templates/html_header.php');
+include('../templates/nav_header.php');
+include('../templates/nav_slideout.php');
+include('../templates/nav_sidebar.php');
+include('../templates/main_header.php');
+
+include('../templates/message.php');
+
+?>
+
+
     <header id="header">
       <div id="icon">
         <img src="https://cdn.brickmmo.com/icons@1.0.0/bricksum.png" alt="Bricksum-icon" />
@@ -64,8 +67,9 @@
             </p>
         </div>
     </footer>
+  
+<?php
 
-    <script src="https://cdn.brickmmo.com/bar@1.0.0/bar.js"></script>
-
-  </body>
-</html>
+include('../templates/main_footer.php');
+include('../templates/debug.php');
+include('../templates/html_footer.php');
