@@ -77,7 +77,7 @@ window.onload = function () {
   }
 
   function brickMMOLorem(num_search) {
-    let url = `http://local.bricksum.brickmmo.com:7777/api/generate/${slctOption.value}/${num_search.value}`;
+    let url = `http://bricksum.local.brickmmo.com/api/generate/${slctOption.value}/${num_search.value}`;
 
     fetch(url)
       .then((response) => response.json())
