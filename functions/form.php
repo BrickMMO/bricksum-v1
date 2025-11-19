@@ -46,7 +46,7 @@ function form_select_table($name, $table, $key, $value, $data = array())
 
 function form_select_array($name, $options, $data = array())
 {
-
+    
     $html = '<select name="'.$name.'" id="'.$name.'" class="w3-input w3-border'.(isset($data['first']) ? '' : ' w3-margin-top').'">';
 
     if(isset($data['empty_key']) || isset($data['empty_value']) )
@@ -64,8 +64,6 @@ function form_select_array($name, $options, $data = array())
     }
 
     $html .= '</select>';
-
-    return $html;
 
     return $html;
 
