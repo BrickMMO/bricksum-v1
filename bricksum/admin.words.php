@@ -51,7 +51,7 @@ $bricksum_stopwords = setting_fetch('BRICKSUM_STOPWORDS', 'comma');
     Bricksum
 </h1>
 <p>
-    <a href="/admin/dashboard">Dashboard</a> / 
+    <a href="<?=ENV_DOMAIN?>/admin/dashboard">Dashboard</a> / 
     Modify Word List
 </p>
 <hr />

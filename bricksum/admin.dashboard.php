@@ -59,7 +59,7 @@ $bricksum_words_generated = setting_fetch('BRICKSUM_WORDS_GENERATED');
 </div>
 
 <a
-    href="/admin/words"
+    href="<?=ENV_DOMAIN?>/admin/words"
     class="w3-button w3-white w3-border"
 >
     <i class="fa-solid fa-pen-to-square fa-padding-right"></i> Modify Word List
