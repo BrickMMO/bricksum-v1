@@ -10,8 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if (
         !validate_blank($_POST['bricksum_wordlist']))
     {
+
         message_set('Word List Error', 'There was an error saving your word list.', 'red');
         header_redirect('/admin/words');
+
     }
 
     setting_update('BRICKSUM_WORDLIST', $_POST['bricksum_wordlist']);
@@ -31,15 +33,12 @@ include('../templates/html_header.php');
 include('../templates/nav_header.php');
 include('../templates/nav_sidebar.php');
 include('../templates/main_header.php');
-
 include('../templates/message.php');
 
 $bricksum_wordlist = setting_fetch('BRICKSUM_WORDLIST', 'comma');
 $bricksum_stopwords = setting_fetch('BRICKSUM_STOPWORDS', 'comma');
 
 ?>
-
-<!-- CONTENT -->
 
 <h1 class="w3-margin-top w3-margin-bottom">
     <img
@@ -49,23 +48,30 @@ $bricksum_stopwords = setting_fetch('BRICKSUM_STOPWORDS', 'comma');
     />
     Bricksum
 </h1>
+
 <p>
     <a href="<?=ENV_DOMAIN?>/admin/dashboard">Dashboard</a> / 
     Modify Word List
 </p>
+
 <hr />
+
 <h2>Modify Word List</h2>
 
 <form
     method="post"
     novalidate
 >
+
     <textarea name="bricksum_wordlist" class="w3-input w3-border w3-margin-bottom" rows="10"><?=$bricksum_wordlist?></textarea>
+
     <textarea name="bricksum_stopwords" class="w3-input w3-border" rows="4"><?=$bricksum_stopwords?></textarea>
+
     <button class="w3-block w3-btn w3-orange w3-text-white w3-margin-bottom w3-margin-top">
         <i class="fa-solid fa-save fa-padding-right"></i>
         Save Word List
     </button>
+    
 </form>
     
 <?php

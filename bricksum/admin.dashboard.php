@@ -4,7 +4,6 @@ security_check();
 admin_check();
 
 define('APP_NAME', 'Bricksum');
-
 define('PAGE_TITLE', 'Dashboard');
 define('PAGE_SELECTED_SECTION', 'admin-content');
 define('PAGE_SELECTED_SUB_PAGE', '/admin/dashboard');
@@ -13,7 +12,6 @@ include('../templates/html_header.php');
 include('../templates/nav_header.php');
 include('../templates/nav_sidebar.php');
 include('../templates/main_header.php');
-
 include('../templates/message.php');
 
 $bricksum_wordlist = setting_fetch('BRICKSUM_WORDLIST', 'comma_2_array');
@@ -22,9 +20,6 @@ $bricksum_sentences_generated = setting_fetch('BRICKSUM_SENTENCES_GENERATED');
 $bricksum_words_generated = setting_fetch('BRICKSUM_WORDS_GENERATED');
 
 ?>
-
-
-<!-- CONTENT -->
 
 <h1 class="w3-margin-top w3-margin-bottom">
     <img
